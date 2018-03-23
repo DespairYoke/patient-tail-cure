@@ -46,4 +46,9 @@ public class DPServiceImpl implements DPService{
         }
         return null;
     }
+
+    @Override
+    public List<DoctorPatient> quryByPatienId(Long pationid) {
+        return doctorPatientMapper.selectResultByPationId(pationid);
+    }
 }

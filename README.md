@@ -22,9 +22,39 @@
 
 病人：
 1、查看治疗费用信息；
+
+    require:
+            {
+                
+            }
+
 2、查看诊治方案信息；
+
+    require:
+           {
+              localhost:8080/patientinfo/queryresults
+           }
+    send:
+           {
+               "id":病人的id
+           }
 3、查看修改用户信息；
+    
+    require:
+        {
+            localhost:8080/user/modifyuser
+        }
+    send:
+       {
+           "id": 用户的id  
+           "age": 要修改的信息
+           "sex": 要修改的信息
+           "phone":要修改的信息
+           "password": 要修改的信息
+       }
 4、查看个人电子病例信息；
+
+    
 
 
 

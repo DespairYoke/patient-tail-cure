@@ -4,7 +4,9 @@ import com.zwd.app.domain.DoctorPatient;
 import com.zwd.app.domain.DoctorPatientExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface DoctorPatientMapper {
     long countByExample(DoctorPatientExample example);
 
@@ -27,4 +29,6 @@ public interface DoctorPatientMapper {
     int updateByPrimaryKeySelective(DoctorPatient record);
 
     int updateByPrimaryKey(DoctorPatient record);
+
+    List<DoctorPatient> selectResultByPationId(Long pationid);
 }

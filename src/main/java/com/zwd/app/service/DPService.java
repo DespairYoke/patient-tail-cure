@@ -14,4 +14,6 @@ public interface DPService {
     void insertSelective(DoctorPatient doctorPatient);
 
     List<PatientInfo> selectPatientInfo();
+
+    List<DoctorPatient> quryByPatienId(Long pationid);
 }

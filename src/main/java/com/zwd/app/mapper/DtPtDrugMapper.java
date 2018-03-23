@@ -4,7 +4,9 @@ import com.zwd.app.domain.DtPtDrug;
 import com.zwd.app.domain.DtPtDrugExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface DtPtDrugMapper {
     long countByExample(DtPtDrugExample example);
 

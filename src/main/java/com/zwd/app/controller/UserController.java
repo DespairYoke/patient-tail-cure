@@ -7,6 +7,7 @@ import com.zwd.app.util.AddPtDcInfo;
 import com.zwd.app.util.LoginInfo;
 import com.zwd.app.util.RespInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -100,6 +101,16 @@ public class UserController {
             return DoctorLogin(doctor);
         }
     }
-
+    @RequestMapping("modifyuser")
+    public String modifyuser(@RequestBody Patient patient){
+        RespInfo info = new RespInfo();
+        int num = userService.updateUser(patient);
+        if(num<0){
+            info.setMsg("信息修改失败!");
+        }else{
+            info.setMsg("信息修改成功!");
+        }
+        return JSON.toJSONString(info);
+    }
 
 }
