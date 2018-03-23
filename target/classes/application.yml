@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: patient-tail-cure
+  datasource:
+    name: zwd
+    url: jdbc:mysql://127.0.0.1:3306/zwd?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mappers/*Mapper.xml
