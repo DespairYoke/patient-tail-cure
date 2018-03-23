@@ -1,11 +1,14 @@
 package com.zwd.app.serviceImpl;
 
 import com.zwd.app.domain.Drug;
+import com.zwd.app.domain.DrugExample;
 import com.zwd.app.mapper.DrugMapper;
 import com.zwd.app.service.DrugService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * @author zwd
@@ -21,5 +24,11 @@ public class DrugServiceImpl implements DrugService{
     @Override
     public void insertSeletive(Drug drug) {
         drugMapper.insertSelective(drug);
+    }
+
+    @Override
+    public List<Drug> selectDrug() {
+        DrugExample drugExample = new DrugExample();
+        return drugMapper.selectByExample(drugExample);
     }
 }

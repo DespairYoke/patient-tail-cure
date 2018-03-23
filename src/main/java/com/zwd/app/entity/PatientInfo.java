@@ -1,5 +1,7 @@
 package com.zwd.app.entity;
 
+import java.util.Date;
+
 /**
  * @author zwd
  * @date 2018/3/23 15:17
@@ -21,6 +23,15 @@ public class PatientInfo {
 
     private String result;
 
+    private Date date;
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public Integer getId() {
         return id;

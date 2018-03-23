@@ -4,7 +4,9 @@ import com.zwd.app.domain.Doctor;
 import com.zwd.app.domain.DoctorExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface DoctorMapper {
     long countByExample(DoctorExample example);
 

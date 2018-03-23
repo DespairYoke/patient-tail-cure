@@ -4,7 +4,9 @@ import com.zwd.app.domain.Patient;
 import com.zwd.app.domain.PatientExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface PatientMapper {
     long countByExample(PatientExample example);
 

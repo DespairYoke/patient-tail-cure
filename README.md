@@ -28,3 +28,37 @@
 
 
 
+//查询所有药品列表
+localhost:8080/drug/selectdrug
+
+    {
+        无
+    }
+  
+//查询病人的病因、治疗方案和主治医生    
+localhost:8080/patientinfo/patientanddoctor
+
+{
+    无
+}
+
+//就诊
+localhost:8080/user/addPatient
+{
+     "number":
+    
+        "patient":{
+        }
+    
+        "doctor":{
+        }
+    
+        "drug":{
+        }
+    
+        "pathogeny":{
+        
+        }
+        "result":{
+        }
+}

@@ -4,7 +4,9 @@ import com.zwd.app.domain.Drug;
 import com.zwd.app.domain.DrugExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface DrugMapper {
     long countByExample(DrugExample example);
 
