@@ -52,6 +52,18 @@
            "phone":要修改的信息
            "password": 要修改的信息
        }
+       
+   根据id查询对象信息:
+   
+   require:
+        {
+            localhost:8080/user/queryuserbyid
+        }
+        
+        send:
+        {
+            "id" pation的id
+        }
 4、查看所有的骨科的普通医生
 
     require:

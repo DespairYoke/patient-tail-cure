@@ -102,6 +102,19 @@ public class UserController {
             return DoctorLogin(doctor);
         }
     }
+
+    @RequestMapping("/queryuserbyid")
+    public String queryuserbyid(@RequestBody Patient patient){
+        RespInfo respInfo = new RespInfo();
+        Patient patient1 = userService.queryById(patient.getId());
+        if(patient1==null){
+            respInfo.setMsg("查询对象不存在!");
+        }else{
+            respInfo.setMsg("信息在此:");
+            respInfo.setContent(patient1);
+        }
+        return JSON.toJSONString(respInfo);
+    }
     @RequestMapping("modifyuser")
     public String modifyuser(@RequestBody Patient patient){
         RespInfo info = new RespInfo();

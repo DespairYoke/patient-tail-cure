@@ -11,4 +11,6 @@ public interface UserService {
     Patient selectByPhoneAndPassword(Patient patient);
 
     int updateUser(Patient patient);
+
+    Patient queryById(Integer id);
 }
