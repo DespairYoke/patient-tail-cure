@@ -8,6 +8,7 @@
     <result column="sex" jdbcType="TINYINT" property="sex" />
     <result column="department" jdbcType="VARCHAR" property="department" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -68,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, position, sex, department, phone
+    id, name, position, sex, department, phone, password
   </sql>
   <select id="selectByExample" parameterType="com.zwd.app.domain.DoctorExample" resultMap="BaseResultMap">
     select
@@ -103,13 +104,13 @@
   </delete>
   <insert id="insert" parameterType="com.zwd.app.domain.Doctor">
     insert into doctor (id, name, position, 
-      sex, department, phone
-      )
+      sex, department, phone, 
+      password)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, 
-      #{sex,jdbcType=TINYINT}, #{department,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}
-      )
+      #{sex,jdbcType=TINYINT}, #{department,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.zwd.app.domain.Doctor" useGeneratedKeys="true" keyProperty="id">
+  <insert id="insertSelective" parameterType="com.zwd.app.domain.Doctor">
     insert into doctor
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -130,6 +131,9 @@
       <if test="phone != null">
         phone,
       </if>
+      <if test="password != null">
+        password,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -149,6 +153,9 @@
       </if>
       <if test="phone != null">
         #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -179,6 +186,9 @@
       <if test="record.phone != null">
         phone = #{record.phone,jdbcType=VARCHAR},
       </if>
+      <if test="record.password != null">
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -191,7 +201,8 @@
       position = #{record.position,jdbcType=VARCHAR},
       sex = #{record.sex,jdbcType=TINYINT},
       department = #{record.department,jdbcType=VARCHAR},
-      phone = #{record.phone,jdbcType=VARCHAR}
+      phone = #{record.phone,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -214,6 +225,9 @@
       <if test="phone != null">
         phone = #{phone,jdbcType=VARCHAR},
       </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -223,7 +237,8 @@
       position = #{position,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=TINYINT},
       department = #{department,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR}
+      phone = #{phone,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

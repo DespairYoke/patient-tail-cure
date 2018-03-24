@@ -7,6 +7,7 @@
     <result column="doctorId" jdbcType="INTEGER" property="doctorid" />
     <result column="time" jdbcType="TIMESTAMP" property="time" />
     <result column="pathogeny" jdbcType="VARCHAR" property="pathogeny" />
+    <result column="result" jdbcType="VARCHAR" property="result" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, patientId, doctorId, time, pathogeny
+    id, patientId, doctorId, time, pathogeny, result
   </sql>
   <select id="selectByExample" parameterType="com.zwd.app.domain.DoctorPatientExample" resultMap="BaseResultMap">
     select
@@ -102,11 +103,13 @@
   </delete>
   <insert id="insert" parameterType="com.zwd.app.domain.DoctorPatient">
     insert into doctor_patient (id, patientId, doctorId, 
-      time, pathogeny)
+      time, pathogeny, result
+      )
     values (#{id,jdbcType=INTEGER}, #{patientid,jdbcType=INTEGER}, #{doctorid,jdbcType=INTEGER}, 
-      #{time,jdbcType=TIMESTAMP}, #{pathogeny,jdbcType=VARCHAR})
+      #{time,jdbcType=TIMESTAMP}, #{pathogeny,jdbcType=VARCHAR}, #{result,jdbcType=VARCHAR}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="com.zwd.app.domain.DoctorPatient" useGeneratedKeys="true" keyProperty="id">
+  <insert id="insertSelective" parameterType="com.zwd.app.domain.DoctorPatient">
     insert into doctor_patient
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -124,6 +127,9 @@
       <if test="pathogeny != null">
         pathogeny,
       </if>
+      <if test="result != null">
+        result,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -140,6 +146,9 @@
       </if>
       <if test="pathogeny != null">
         #{pathogeny,jdbcType=VARCHAR},
+      </if>
+      <if test="result != null">
+        #{result,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -167,6 +176,9 @@
       <if test="record.pathogeny != null">
         pathogeny = #{record.pathogeny,jdbcType=VARCHAR},
       </if>
+      <if test="record.result != null">
+        result = #{record.result,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -178,7 +190,8 @@
       patientId = #{record.patientid,jdbcType=INTEGER},
       doctorId = #{record.doctorid,jdbcType=INTEGER},
       time = #{record.time,jdbcType=TIMESTAMP},
-      pathogeny = #{record.pathogeny,jdbcType=VARCHAR}
+      pathogeny = #{record.pathogeny,jdbcType=VARCHAR},
+      result = #{record.result,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -198,6 +211,9 @@
       <if test="pathogeny != null">
         pathogeny = #{pathogeny,jdbcType=VARCHAR},
       </if>
+      <if test="result != null">
+        result = #{result,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -206,7 +222,8 @@
     set patientId = #{patientid,jdbcType=INTEGER},
       doctorId = #{doctorid,jdbcType=INTEGER},
       time = #{time,jdbcType=TIMESTAMP},
-      pathogeny = #{pathogeny,jdbcType=VARCHAR}
+      pathogeny = #{pathogeny,jdbcType=VARCHAR},
+      result = #{result,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
