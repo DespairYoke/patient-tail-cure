@@ -23,7 +23,13 @@ public class UserServiceImpl implements UserService{
     private PatientMapper patientMapper;
     @Override
     public void insertSeletive(Patient patient) {
-        patientMapper.insertSelective(patient);
+        PatientExample patientExample = new PatientExample();
+        patientExample.createCriteria().andPhoneEqualTo(patient.getPhone());
+        List<Patient> list=patientMapper.selectByExample(patientExample);
+        if (list.isEmpty()) {
+            patient.setPassword("123456");
+            patientMapper.insertSelective(patient);
+        }
     }
 
     @Override

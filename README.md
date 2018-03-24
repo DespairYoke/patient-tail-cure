@@ -1,7 +1,7 @@
 # patient-tail-cure
 基于web的病人跟踪治疗系统,用于记录病人信息
 
-1.添加病人的基本信息、就诊医生信息、就诊病因、医生开的处方、药品价格
+
 
 
 系统功能需求：
@@ -25,6 +25,8 @@
 2、查看诊治方案信息；
 3、查看修改用户信息；
 4、查看个人电子病例信息；
+
+
 
 
 
@@ -62,3 +64,10 @@ localhost:8080/user/addPatient
         "result":{
         }
 }
+
+//病例
+localhost:8080/patientinfo/selectallpatient
+
+    {
+    
+    }
