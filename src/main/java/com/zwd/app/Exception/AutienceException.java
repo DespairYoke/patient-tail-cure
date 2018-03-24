@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2018/3/22 17:13
  * @Email lovejavazwd@gmail.com
  */
-@RestController
 @ControllerAdvice
 public class AutienceException extends Exception{
 

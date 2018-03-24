@@ -34,7 +34,7 @@ public class UserController {
     @Autowired
     private DPDService dpdService;
     @RequestMapping("addPatient")
-    public String addPatient(AddPtDcInfo addPtDcInfo) {
+    public String addPatient(@RequestBody AddPtDcInfo addPtDcInfo) {
         RespInfo respInfo = new RespInfo();
         Patient patient = addPtDcInfo.getPatient();
         Doctor doctor = addPtDcInfo.getDoctor();
