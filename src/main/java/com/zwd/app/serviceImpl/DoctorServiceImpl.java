@@ -48,13 +48,14 @@ public class DoctorServiceImpl implements DoctorService
     }
 
     @Override
-<<<<<<< HEAD
     public List<Doctor> queryAllBoneNomalDoctor(Doctor doctor) {
         DoctorExample example = new DoctorExample();
-        
+
 
         return null;
-=======
+    }
+
+    @Override
     public List<DoctorInfo> selectResult() {
         List<DoctorInfo> list1 = new ArrayList<>();
         DoctorPatientExample doctorPatientExample = new DoctorPatientExample();
@@ -70,6 +71,5 @@ public class DoctorServiceImpl implements DoctorService
             list1.add(doctorInfo);
         }
         return list1;
->>>>>>> ca409ffc8d5d03a481fe91a3b76be095dd6a00bf
     }
 }
