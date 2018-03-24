@@ -52,9 +52,14 @@
            "phone":要修改的信息
            "password": 要修改的信息
        }
-4、查看对应科室(骨科,牙科)下的普通医生,专家
+4、查看所有的骨科的普通医生
 
-    
+    require:
+      {
+        http://localhost:8080/doctor/querybonenomal
+      }
+
+    send:
 
 
 

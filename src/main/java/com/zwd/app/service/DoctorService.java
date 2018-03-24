@@ -18,7 +18,13 @@ public interface DoctorService {
     Doctor selectByPhoneAndPassword(Doctor doctor);
 
 
-    List<Doctor> queryAllBoneNomalDoctor(Doctor doctor);
+    List<Doctor> queryAllBoneNomalDoctor();
+
+    List<Doctor> queryAllBonePrefessionalDoctor();
+
+    List<Doctor> queryAllToothNomalDoctor();
+
+    List<Doctor> queryAllToothPrefessionalDoctor();
 
     List<DoctorInfo> selectResult();
 
