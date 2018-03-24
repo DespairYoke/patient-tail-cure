@@ -52,4 +52,9 @@ public class UserServiceImpl implements UserService{
     public int updateUser(Patient patient) {
         return patientMapper.updateByPrimaryKeySelective(patient);
     }
+
+    @Override
+    public Patient queryById(Integer  id) {
+        return patientMapper.selectByPrimaryKey(id);
+    }
 }

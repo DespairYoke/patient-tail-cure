@@ -52,6 +52,18 @@
            "phone":要修改的信息
            "password": 要修改的信息
        }
+       
+   根据id查询对象信息:
+   
+   require:
+        {
+            localhost:8080/user/queryuserbyid
+        }
+        
+        send:
+        {
+            "id" pation的id
+        }
 4、查看所有的骨科的普通医生
 
     require:
@@ -60,12 +72,50 @@
       }
 
     send:
+       
+       {
+        无参数
+       }
 
+5.查询所有的骨科的专家
 
+        require:
+          {
+            http://localhost:8080/doctor/queryboneprefessional
+          }
+       send:
+              
+          {
+           无参数
+           }
+           
+6.查询所有的牙科的普通医生
 
+        require:
+            {
+              http://localhost:8080/doctor/querytoothnomal
+            }
+            
+        send:
+                      
+            {
+              无参数
+            }
+        
+7.查询所有的牙科的专家
 
-
+        require:
+           {
+             http://localhost:8080/doctor/querytoothprefessional   
+           }
+           
+        send:
+           {
+             无参数
+           }
+        
 //查询所有药品列表
+
 localhost:8080/drug/selectdrug
 
     {
@@ -117,12 +167,14 @@ localhost:8080/patientinfo/selectallpatient
 
 //查看医生基本信息
 localhost:8080/doctor/selectdoctor
-{
-    "phone":
-}
-//更改密码
+
+    {
+        "phone":
+    }
+//更改医生密码
 localhost:8080/doctor/modifydoctor
-{
-    "phone":
-    "password":
-}
+    
+    {
+       "phone":
+       "password":
+    }
