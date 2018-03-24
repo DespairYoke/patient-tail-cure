@@ -44,4 +44,10 @@ public class UserServiceImpl implements UserService{
         }
 
     }
+
+    //修改用户信息
+    @Override
+    public int updateUser(Patient patient) {
+        return patientMapper.updateByPrimaryKeySelective(patient);
+    }
 }

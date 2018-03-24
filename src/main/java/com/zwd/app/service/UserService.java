@@ -9,4 +9,6 @@ public interface UserService {
     void insertSeletive(Patient patient);
 
     Patient selectByPhoneAndPassword(Patient patient);
+
+    int updateUser(Patient patient);
 }

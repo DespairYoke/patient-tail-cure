@@ -29,4 +29,6 @@ public interface DoctorPatientMapper {
     int updateByPrimaryKeySelective(DoctorPatient record);
 
     int updateByPrimaryKey(DoctorPatient record);
+
+    List<DoctorPatient> selectResultByPationId(Long pationid);
 }

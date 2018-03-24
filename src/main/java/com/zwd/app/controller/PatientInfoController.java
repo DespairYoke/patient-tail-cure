@@ -1,12 +1,18 @@
 package com.zwd.app.controller;
 
 import com.alibaba.fastjson.JSON;
+<<<<<<< HEAD
+import com.zwd.app.domain.DoctorPatient;
+import com.zwd.app.service.DPService;
+=======
 import com.zwd.app.entity.DoctorInfo;
 import com.zwd.app.entity.PatientInfo;
 import com.zwd.app.service.DPService;
 import com.zwd.app.service.DoctorService;
+>>>>>>> ca409ffc8d5d03a481fe91a3b76be095dd6a00bf
 import com.zwd.app.util.RespInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -60,5 +66,19 @@ public class PatientInfoController {
         respInfo.setContent(list);
         return JSON.toJSONString(respInfo);
 
+    }
+
+    @RequestMapping("/queryresults")
+    public String queryresults(@RequestBody DoctorPatient doctorPatient){
+        RespInfo respInfo = new RespInfo();
+        List<DoctorPatient> list = dpService.quryByPatienId(doctorPatient.getPatientid());
+        if(list.size()==0){
+            respInfo.setMsg("你查询的信息不存在!");
+            return JSON.toJSONString(respInfo);
+        }else{
+             respInfo.setContent(list);
+             respInfo.setMsg("信息在此:");
+             return JSON.toJSONString(list);
+        }
     }
 }
