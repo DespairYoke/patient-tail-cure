@@ -1,10 +1,9 @@
 package com.zwd.app.service;
 
 import com.zwd.app.domain.Doctor;
-<<<<<<< HEAD
-=======
+
 import com.zwd.app.entity.DoctorInfo;
->>>>>>> ca409ffc8d5d03a481fe91a3b76be095dd6a00bf
+
 
 import java.util.List;
 
@@ -18,10 +17,9 @@ public interface DoctorService {
 
     Doctor selectByPhoneAndPassword(Doctor doctor);
 
-<<<<<<< HEAD
 
     List<Doctor> queryAllBoneNomalDoctor(Doctor doctor);
-=======
+
     List<DoctorInfo> selectResult();
->>>>>>> ca409ffc8d5d03a481fe91a3b76be095dd6a00bf
+
 }

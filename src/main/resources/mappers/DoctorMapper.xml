@@ -4,9 +4,9 @@
   <resultMap id="BaseResultMap" type="com.zwd.app.domain.Doctor">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="position" jdbcType="TINYINT" property="position" />
     <result column="sex" jdbcType="TINYINT" property="sex" />
-    <result column="department" jdbcType="VARCHAR" property="department" />
+    <result column="department" jdbcType="TINYINT" property="department" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="password" jdbcType="VARCHAR" property="password" />
   </resultMap>
@@ -86,13 +86,6 @@
       order by ${orderByClause}
     </if>
   </select>
-  <!--&lt;!&ndash;查询所有的骨科的普通医生&ndash;&gt;
-  <select id="selectAllBoneNomalDoctor" parameterType="com.zwd.app.domain.Doctor" resultType="com.zwd.app.domain.Doctor">
-    select
-    <include refid="Base_Column_List" />
-    from doctor
-    where position
-  </select>-->
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -113,8 +106,8 @@
     insert into doctor (id, name, position, 
       sex, department, phone, 
       password)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, 
-      #{sex,jdbcType=TINYINT}, #{department,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{position,jdbcType=TINYINT}, 
+      #{sex,jdbcType=TINYINT}, #{department,jdbcType=TINYINT}, #{phone,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.zwd.app.domain.Doctor">
@@ -150,13 +143,13 @@
         #{name,jdbcType=VARCHAR},
       </if>
       <if test="position != null">
-        #{position,jdbcType=VARCHAR},
+        #{position,jdbcType=TINYINT},
       </if>
       <if test="sex != null">
         #{sex,jdbcType=TINYINT},
       </if>
       <if test="department != null">
-        #{department,jdbcType=VARCHAR},
+        #{department,jdbcType=TINYINT},
       </if>
       <if test="phone != null">
         #{phone,jdbcType=VARCHAR},
@@ -182,13 +175,13 @@
         name = #{record.name,jdbcType=VARCHAR},
       </if>
       <if test="record.position != null">
-        position = #{record.position,jdbcType=VARCHAR},
+        position = #{record.position,jdbcType=TINYINT},
       </if>
       <if test="record.sex != null">
         sex = #{record.sex,jdbcType=TINYINT},
       </if>
       <if test="record.department != null">
-        department = #{record.department,jdbcType=VARCHAR},
+        department = #{record.department,jdbcType=TINYINT},
       </if>
       <if test="record.phone != null">
         phone = #{record.phone,jdbcType=VARCHAR},
@@ -205,9 +198,9 @@
     update doctor
     set id = #{record.id,jdbcType=INTEGER},
       name = #{record.name,jdbcType=VARCHAR},
-      position = #{record.position,jdbcType=VARCHAR},
+      position = #{record.position,jdbcType=TINYINT},
       sex = #{record.sex,jdbcType=TINYINT},
-      department = #{record.department,jdbcType=VARCHAR},
+      department = #{record.department,jdbcType=TINYINT},
       phone = #{record.phone,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR}
     <if test="_parameter != null">
@@ -221,13 +214,13 @@
         name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="position != null">
-        position = #{position,jdbcType=VARCHAR},
+        position = #{position,jdbcType=TINYINT},
       </if>
       <if test="sex != null">
         sex = #{sex,jdbcType=TINYINT},
       </if>
       <if test="department != null">
-        department = #{department,jdbcType=VARCHAR},
+        department = #{department,jdbcType=TINYINT},
       </if>
       <if test="phone != null">
         phone = #{phone,jdbcType=VARCHAR},
@@ -241,9 +234,9 @@
   <update id="updateByPrimaryKey" parameterType="com.zwd.app.domain.Doctor">
     update doctor
     set name = #{name,jdbcType=VARCHAR},
-      position = #{position,jdbcType=VARCHAR},
+      position = #{position,jdbcType=TINYINT},
       sex = #{sex,jdbcType=TINYINT},
-      department = #{department,jdbcType=VARCHAR},
+      department = #{department,jdbcType=TINYINT},
       phone = #{phone,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}

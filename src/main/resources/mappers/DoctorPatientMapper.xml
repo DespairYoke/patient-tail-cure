@@ -91,12 +91,6 @@
     from doctor_patient
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <select id="selectResultByPationId" resultType="com.zwd.app.domain.DoctorPatient">
-    select
-    <include refid="Base_Column_List" />
-    from doctor_patient
-    where patienId = #{patienid,jdbcType=INTEGER}
-  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from doctor_patient
     where id = #{id,jdbcType=INTEGER}

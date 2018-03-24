@@ -15,9 +15,7 @@ public interface DPService {
 
     List<PatientInfo> selectPatientInfo();
 
-<<<<<<< HEAD
-    List<DoctorPatient> quryByPatienId(Long pationid);
-=======
+    List<DoctorPatient> quryByPatienId(Integer pationid);
+
     List<PatientInfo> selectPatientInfoByName(String name);
->>>>>>> ca409ffc8d5d03a481fe91a3b76be095dd6a00bf
 }

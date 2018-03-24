@@ -244,62 +244,52 @@ public class DoctorExample {
             return (Criteria) this;
         }
 
-        public Criteria andPositionEqualTo(String value) {
+        public Criteria andPositionEqualTo(Byte value) {
             addCriterion("position =", value, "position");
             return (Criteria) this;
         }
 
-        public Criteria andPositionNotEqualTo(String value) {
+        public Criteria andPositionNotEqualTo(Byte value) {
             addCriterion("position <>", value, "position");
             return (Criteria) this;
         }
 
-        public Criteria andPositionGreaterThan(String value) {
+        public Criteria andPositionGreaterThan(Byte value) {
             addCriterion("position >", value, "position");
             return (Criteria) this;
         }
 
-        public Criteria andPositionGreaterThanOrEqualTo(String value) {
+        public Criteria andPositionGreaterThanOrEqualTo(Byte value) {
             addCriterion("position >=", value, "position");
             return (Criteria) this;
         }
 
-        public Criteria andPositionLessThan(String value) {
+        public Criteria andPositionLessThan(Byte value) {
             addCriterion("position <", value, "position");
             return (Criteria) this;
         }
 
-        public Criteria andPositionLessThanOrEqualTo(String value) {
+        public Criteria andPositionLessThanOrEqualTo(Byte value) {
             addCriterion("position <=", value, "position");
             return (Criteria) this;
         }
 
-        public Criteria andPositionLike(String value) {
-            addCriterion("position like", value, "position");
-            return (Criteria) this;
-        }
-
-        public Criteria andPositionNotLike(String value) {
-            addCriterion("position not like", value, "position");
-            return (Criteria) this;
-        }
-
-        public Criteria andPositionIn(List<String> values) {
+        public Criteria andPositionIn(List<Byte> values) {
             addCriterion("position in", values, "position");
             return (Criteria) this;
         }
 
-        public Criteria andPositionNotIn(List<String> values) {
+        public Criteria andPositionNotIn(List<Byte> values) {
             addCriterion("position not in", values, "position");
             return (Criteria) this;
         }
 
-        public Criteria andPositionBetween(String value1, String value2) {
+        public Criteria andPositionBetween(Byte value1, Byte value2) {
             addCriterion("position between", value1, value2, "position");
             return (Criteria) this;
         }
 
-        public Criteria andPositionNotBetween(String value1, String value2) {
+        public Criteria andPositionNotBetween(Byte value1, Byte value2) {
             addCriterion("position not between", value1, value2, "position");
             return (Criteria) this;
         }
@@ -374,62 +364,52 @@ public class DoctorExample {
             return (Criteria) this;
         }
 
-        public Criteria andDepartmentEqualTo(String value) {
+        public Criteria andDepartmentEqualTo(Byte value) {
             addCriterion("department =", value, "department");
             return (Criteria) this;
         }
 
-        public Criteria andDepartmentNotEqualTo(String value) {
+        public Criteria andDepartmentNotEqualTo(Byte value) {
             addCriterion("department <>", value, "department");
             return (Criteria) this;
         }
 
-        public Criteria andDepartmentGreaterThan(String value) {
+        public Criteria andDepartmentGreaterThan(Byte value) {
             addCriterion("department >", value, "department");
             return (Criteria) this;
         }
 
-        public Criteria andDepartmentGreaterThanOrEqualTo(String value) {
+        public Criteria andDepartmentGreaterThanOrEqualTo(Byte value) {
             addCriterion("department >=", value, "department");
             return (Criteria) this;
         }
 
-        public Criteria andDepartmentLessThan(String value) {
+        public Criteria andDepartmentLessThan(Byte value) {
             addCriterion("department <", value, "department");
             return (Criteria) this;
         }
 
-        public Criteria andDepartmentLessThanOrEqualTo(String value) {
+        public Criteria andDepartmentLessThanOrEqualTo(Byte value) {
             addCriterion("department <=", value, "department");
             return (Criteria) this;
         }
 
-        public Criteria andDepartmentLike(String value) {
-            addCriterion("department like", value, "department");
-            return (Criteria) this;
-        }
-
-        public Criteria andDepartmentNotLike(String value) {
-            addCriterion("department not like", value, "department");
-            return (Criteria) this;
-        }
-
-        public Criteria andDepartmentIn(List<String> values) {
+        public Criteria andDepartmentIn(List<Byte> values) {
             addCriterion("department in", values, "department");
             return (Criteria) this;
         }
 
-        public Criteria andDepartmentNotIn(List<String> values) {
+        public Criteria andDepartmentNotIn(List<Byte> values) {
             addCriterion("department not in", values, "department");
             return (Criteria) this;
         }
 
-        public Criteria andDepartmentBetween(String value1, String value2) {
+        public Criteria andDepartmentBetween(Byte value1, Byte value2) {
             addCriterion("department between", value1, value2, "department");
             return (Criteria) this;
         }
 
-        public Criteria andDepartmentNotBetween(String value1, String value2) {
+        public Criteria andDepartmentNotBetween(Byte value1, Byte value2) {
             addCriterion("department not between", value1, value2, "department");
             return (Criteria) this;
         }

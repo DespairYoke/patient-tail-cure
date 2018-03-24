@@ -5,11 +5,11 @@ public class Doctor {
 
     private String name;
 
-    private String position;
+    private Byte position;
 
     private Byte sex;
 
-    private String department;
+    private Byte department;
 
     private String phone;
 
@@ -31,12 +31,12 @@ public class Doctor {
         this.name = name == null ? null : name.trim();
     }
 
-    public String getPosition() {
+    public Byte getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
-        this.position = position == null ? null : position.trim();
+    public void setPosition(Byte position) {
+        this.position = position;
     }
 
     public Byte getSex() {
@@ -47,12 +47,12 @@ public class Doctor {
         this.sex = sex;
     }
 
-    public String getDepartment() {
+    public Byte getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
-        this.department = department == null ? null : department.trim();
+    public void setDepartment(Byte department) {
+        this.department = department;
     }
 
     public String getPhone() {

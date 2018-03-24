@@ -23,7 +23,7 @@ public class DoctorPatient {
         this.id = id;
     }
 
-    public Long getPatientid() {
+    public Integer getPatientid() {
         return patientid;
     }
 
