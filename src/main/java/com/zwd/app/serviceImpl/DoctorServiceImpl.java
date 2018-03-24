@@ -22,8 +22,7 @@ import java.util.List;
  */
 @Service
 @Transactional
-public class DoctorServiceImpl implements DoctorService
-{
+public class DoctorServiceImpl implements DoctorService {
 
     @Autowired
     private DoctorMapper doctorMapper;
@@ -46,13 +45,40 @@ public class DoctorServiceImpl implements DoctorService
             return list.get(0);
         }
     }
-
+    //查询所有骨科的普通医生
     @Override
-    public List<Doctor> queryAllBoneNomalDoctor(Doctor doctor) {
+    public List<Doctor> queryAllBoneNomalDoctor() {
         DoctorExample example = new DoctorExample();
+        example.createCriteria().andDepartmentEqualTo((byte)1).andPositionEqualTo((byte)1);
+        List<Doctor> doctors = doctorMapper.selectByExample(example);
+        return doctors;
+    }
 
+    //查询所有骨科的专家医生
+    @Override
+    public List<Doctor> queryAllBonePrefessionalDoctor() {
+        DoctorExample doctorExample = new DoctorExample();
+        doctorExample.createCriteria().andDepartmentEqualTo((byte)1).andPositionEqualTo((byte)2);
+        List<Doctor> doctors = doctorMapper.selectByExample(doctorExample);
+        return doctors;
+    }
 
-        return null;
+    //查询所有牙科的普通医生
+    @Override
+    public List<Doctor> queryAllToothNomalDoctor() {
+        DoctorExample doctorExample = new DoctorExample();
+        doctorExample.createCriteria().andDepartmentEqualTo((byte)2).andPositionEqualTo((byte)1);
+        List<Doctor> doctors = doctorMapper.selectByExample(doctorExample);
+        return doctors;
+    }
+
+    //查询所有牙科的专家医生
+    @Override
+    public List<Doctor> queryAllToothPrefessionalDoctor() {
+        DoctorExample doctorExample = new DoctorExample();
+        doctorExample.createCriteria().andDepartmentEqualTo((byte)2).andPositionEqualTo((byte)2);
+        List<Doctor> doctors = doctorMapper.selectByExample(doctorExample);
+        return doctors;
     }
 
     @Override
