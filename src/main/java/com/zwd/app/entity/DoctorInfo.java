@@ -7,9 +7,9 @@ package com.zwd.app.entity;
  */
 public class DoctorInfo {
 
-    private String position;
+    private Byte position;
 
-    private String department;
+    private Byte department;
 
     private String name;
 
@@ -19,19 +19,12 @@ public class DoctorInfo {
 
     private String result;
 
-    public String getPosition() {
-        return position;
-    }
 
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public String getDepartment() {
+    public Byte getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(Byte department) {
         this.department = department;
     }
 
@@ -49,6 +42,14 @@ public class DoctorInfo {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Byte getPosition() {
+        return position;
+    }
+
+    public void setPosition(Byte position) {
+        this.position = position;
     }
 
     public String getPathogeny() {
