@@ -39,14 +39,15 @@ public class UserController {
         Patient patient = addPtDcInfo.getPatient();
         Doctor doctor = addPtDcInfo.getDoctor();
         Drug drug = addPtDcInfo.getDrug();
-        userService.insertSeletive(patient);
-        doctorService.insertSeletive(doctor);
+        patient = userService.insertSeletive(patient);
+        doctor = doctorService.insertSeletive(doctor);
         drugService.insertSeletive(drug);
         DoctorPatient doctorPatient = new DoctorPatient();
         doctorPatient.setDoctorid(doctor.getId());
         doctorPatient.setPatientid(patient.getId());
         doctorPatient.setTime(new Date());
         doctorPatient.setPathogeny(addPtDcInfo.getPathogeny());
+        doctorPatient.setResult(addPtDcInfo.getResult());
         dpService.insertSelective(doctorPatient);
         DtPtDrug dtPtDrug = new DtPtDrug();
         dtPtDrug.setDoctorpatientid(doctorPatient.getId());

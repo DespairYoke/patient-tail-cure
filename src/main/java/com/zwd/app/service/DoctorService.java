@@ -13,7 +13,7 @@ import java.util.List;
  * @Email lovejavazwd@gmail.com
  */
 public interface DoctorService {
-    void insertSeletive(Doctor doctor);
+    Doctor insertSeletive(Doctor doctor);
 
     Doctor selectByPhoneAndPassword(Doctor doctor);
 

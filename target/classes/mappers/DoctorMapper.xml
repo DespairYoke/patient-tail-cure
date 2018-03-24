@@ -110,7 +110,7 @@
       #{sex,jdbcType=TINYINT}, #{department,jdbcType=TINYINT}, #{phone,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.zwd.app.domain.Doctor">
+  <insert id="insertSelective" parameterType="com.zwd.app.domain.Doctor" useGeneratedKeys="true" keyProperty="id">
     insert into doctor
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

@@ -5,7 +5,7 @@ spring:
     name: patient-tail-cure
   datasource:
     name: sv
-    url: jdbc:mysql://115.29.32.62:3306/pt_dc?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://115.29.32.62:3306/ligh?useUnicode=true&characterEncoding=utf8
     username: root
     password: 7d428bc667
     # 使用druid数据源

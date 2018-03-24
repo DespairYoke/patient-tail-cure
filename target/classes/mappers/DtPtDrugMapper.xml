@@ -105,7 +105,7 @@
     values (#{id,jdbcType=INTEGER}, #{doctorpatientid,jdbcType=INTEGER}, #{drugid,jdbcType=INTEGER}, 
       #{num,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.zwd.app.domain.DtPtDrug">
+  <insert id="insertSelective" parameterType="com.zwd.app.domain.DtPtDrug" useGeneratedKeys="true" keyProperty="id">
     insert into dt_pt_drug
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
