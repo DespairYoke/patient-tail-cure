@@ -29,4 +29,6 @@ public interface DoctorMapper {
     int updateByPrimaryKeySelective(Doctor record);
 
     int updateByPrimaryKey(Doctor record);
+
+    List<Doctor> selectAllBoneNomalDoctor(Doctor doctor);
 }

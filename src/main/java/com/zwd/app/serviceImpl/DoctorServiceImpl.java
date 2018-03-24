@@ -17,7 +17,8 @@ import java.util.List;
  */
 @Service
 @Transactional
-public class DoctorServiceImpl implements DoctorService {
+public class DoctorServiceImpl implements DoctorService
+{
 
     @Autowired
     private DoctorMapper doctorMapper;
@@ -37,5 +38,13 @@ public class DoctorServiceImpl implements DoctorService {
         {
             return list.get(0);
         }
+    }
+
+    @Override
+    public List<Doctor> queryAllBoneNomalDoctor(Doctor doctor) {
+        DoctorExample example = new DoctorExample();
+        
+
+        return null;
     }
 }
