@@ -106,4 +106,18 @@ public class DoctorServiceImpl implements DoctorService {
         }
         return list1;
     }
+
+    @Override
+    public int updateUser(Doctor doctor) {
+        DoctorExample doctorExample = new DoctorExample();
+        doctorExample.createCriteria().andPhoneEqualTo(doctor.getPhone());
+        return doctorMapper.updateByExampleSelective(doctor,doctorExample);
+    }
+
+    @Override
+    public Doctor selectDoctor(Doctor doctor) {
+        DoctorExample doctorExample = new DoctorExample();
+        doctorExample.createCriteria().andPhoneEqualTo(doctor.getPhone());
+        return doctorMapper.selectByExample(doctorExample).get(0);
+    }
 }

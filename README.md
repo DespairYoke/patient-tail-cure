@@ -114,3 +114,15 @@ localhost:8080/patientinfo/selectallpatient
     {
         无
     }
+
+//查看医生基本信息
+localhost:8080/doctor/selectdoctor
+{
+    "phone":
+}
+//更改密码
+localhost:8080/doctor/modifydoctor
+{
+    "phone":
+    "password":
+}

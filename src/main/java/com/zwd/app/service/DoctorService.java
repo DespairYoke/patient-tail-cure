@@ -28,4 +28,7 @@ public interface DoctorService {
 
     List<DoctorInfo> selectResult();
 
+    int updateUser(Doctor doctor);
+
+    Doctor selectDoctor(Doctor doctor);
 }

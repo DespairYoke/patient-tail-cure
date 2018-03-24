@@ -102,6 +102,10 @@ public class UserController {
             return DoctorLogin(doctor);
         }
     }
+
+
+
+    //修改医生密码
     @RequestMapping("modifyuser")
     public String modifyuser(@RequestBody Patient patient){
         RespInfo info = new RespInfo();

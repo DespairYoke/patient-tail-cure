@@ -2,6 +2,7 @@ package com.zwd.app.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.zwd.app.domain.Doctor;
+import com.zwd.app.domain.Patient;
 import com.zwd.app.service.DoctorService;
 import com.zwd.app.util.RespInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,5 +75,23 @@ public class DoctorController {
             respInfo.setContent(doctors);
         }
         return JSON.toJSONString(doctors);
+    }
+    @RequestMapping("selectdoctor")
+    public String selectdoctor(@RequestBody Doctor doctor){
+        RespInfo info = new RespInfo();
+        info.setContent(doctorService.selectDoctor(doctor));
+        info.setMsg("查询成功");
+        return JSON.toJSONString(info);
+    }
+    @RequestMapping("modifydoctor")
+    public String modifyDoctor(@RequestBody Doctor doctor){
+        RespInfo info = new RespInfo();
+        int num = doctorService.updateUser(doctor);
+        if(num<0){
+            info.setMsg("信息修改失败!");
+        }else{
+            info.setMsg("信息修改成功!");
+        }
+        return JSON.toJSONString(info);
     }
 }
