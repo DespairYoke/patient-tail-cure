@@ -35,6 +35,7 @@ public class DoctorServiceImpl implements DoctorService
         doctorExample.createCriteria().andPhoneEqualTo(doctor.getPhone());
         List<Doctor> list = doctorMapper.selectByExample(doctorExample);
         if (list.isEmpty()){
+            doctor.setPassword("123456");
             doctorMapper.insertSelective(doctor);
             return doctor;
         }
