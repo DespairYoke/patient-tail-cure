@@ -109,7 +109,7 @@
       #{time,jdbcType=TIMESTAMP}, #{pathogeny,jdbcType=VARCHAR}, #{result,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.zwd.app.domain.DoctorPatient">
+  <insert id="insertSelective" parameterType="com.zwd.app.domain.DoctorPatient" useGeneratedKeys="true" keyProperty="id">
     insert into doctor_patient
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

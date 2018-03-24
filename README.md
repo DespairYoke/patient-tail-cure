@@ -52,9 +52,14 @@
            "phone":要修改的信息
            "password": 要修改的信息
        }
-4、查看对应科室(骨科,牙科)下的普通医生,专家
+4、查看所有的骨科的普通医生
 
-    
+    require:
+      {
+        http://localhost:8080/doctor/querybonenomal
+      }
+
+    send:
 
 
 
@@ -77,22 +82,30 @@ localhost:8080/patientinfo/patientanddoctor
 //就诊
 localhost:8080/user/addPatient
 {
-     "number":
+     "number": 2,
     
-        "patient":{
+        "patient": {
+        		"name": "张三",
+        		"age": 22,
+        		"sex":	0,
+        		"phone": "12111111111"
         }
-    
+      ,
         "doctor":{
-        }
-    
+        	"name": "张医生",
+        	"position": 0,
+        	"sex": 0,
+        	"department": 0,
+        	"phone": "15111111111"
+        },
         "drug":{
-        }
+        	"name": "阿莫西林",
+        	"price": 45,
+        	"factory": "富士山"
+        },
     
-        "pathogeny":{
-        
-        }
-        "result":{
-        }
+        "pathogeny": "头晕流鼻涕",
+        "result": "普通小感冒"
 }
 
 //病例

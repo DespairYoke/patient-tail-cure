@@ -6,7 +6,7 @@ import com.zwd.app.domain.Patient; /**
  * @Email lovejavazwd@gmail.com
  */
 public interface UserService {
-    void insertSeletive(Patient patient);
+    Patient insertSeletive(Patient patient);
 
     Patient selectByPhoneAndPassword(Patient patient);
 

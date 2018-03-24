@@ -29,8 +29,15 @@ public class DoctorServiceImpl implements DoctorService {
     @Autowired
     private DoctorPatientMapper doctorPatientMapper;
     @Override
-    public void insertSeletive(Doctor doctor) {
-        doctorMapper.insertSelective(doctor);
+    public Doctor insertSeletive(Doctor doctor) {
+        DoctorExample doctorExample = new DoctorExample();
+        doctorExample.createCriteria().andPhoneEqualTo(doctor.getPhone());
+        List<Doctor> list = doctorMapper.selectByExample(doctorExample);
+        if (list.isEmpty()){
+            doctorMapper.insertSelective(doctor);
+            return doctor;
+        }
+        return list.get(0);
     }
 
     @Override

@@ -23,7 +23,13 @@ public class DrugServiceImpl implements DrugService{
     private DrugMapper drugMapper;
     @Override
     public void insertSeletive(Drug drug) {
-        drugMapper.insertSelective(drug);
+        DrugExample drugExample = new DrugExample();
+        drugExample.createCriteria().andNameEqualTo(drug.getName());
+        List<Drug> list = drugMapper.selectByExample(drugExample);
+        if (list.isEmpty()) {
+            drugMapper.insertSelective(drug);
+        }
+
     }
 
     @Override
