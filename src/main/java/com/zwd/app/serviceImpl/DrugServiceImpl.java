@@ -22,14 +22,15 @@ public class DrugServiceImpl implements DrugService{
     @Autowired
     private DrugMapper drugMapper;
     @Override
-    public void insertSeletive(Drug drug) {
+    public Drug insertSeletive(Drug drug) {
         DrugExample drugExample = new DrugExample();
         drugExample.createCriteria().andNameEqualTo(drug.getName());
         List<Drug> list = drugMapper.selectByExample(drugExample);
         if (list.isEmpty()) {
             drugMapper.insertSelective(drug);
+            return drug;
         }
-
+        return list.get(0);
     }
 
     @Override

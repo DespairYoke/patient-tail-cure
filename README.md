@@ -21,13 +21,6 @@
 
 
 病人：
-1、查看治疗费用信息；
-
-    require:
-            {
-                
-            }
-
 2、查看诊治方案信息；
 
     require:
@@ -142,10 +135,6 @@ localhost:8080/user/addPatient
         }
       ,
         "doctor":{
-        	"name": "张医生",
-        	"position": 0,
-        	"sex": 0,
-        	"department": 0,
         	"phone": "15111111111"
         },
         "drug":{

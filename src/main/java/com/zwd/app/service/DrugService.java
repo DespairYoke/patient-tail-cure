@@ -10,7 +10,7 @@ import java.util.List;
  * @Email lovejavazwd@gmail.com
  */
 public interface DrugService {
-    void insertSeletive(Drug drug);
+    Drug insertSeletive(Drug drug);
 
     List<Drug> selectDrug();
 }

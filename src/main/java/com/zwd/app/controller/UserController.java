@@ -40,7 +40,7 @@ public class UserController {
         Doctor doctor = addPtDcInfo.getDoctor();
         Drug drug = addPtDcInfo.getDrug();
         patient = userService.insertSeletive(patient);
-        doctor = doctorService.insertSeletive(doctor);
+        doctor = doctorService.selectDoctor(doctor);
         drugService.insertSeletive(drug);
         DoctorPatient doctorPatient = new DoctorPatient();
         doctorPatient.setDoctorid(doctor.getId());
