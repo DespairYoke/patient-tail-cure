@@ -172,7 +172,7 @@ localhost:8080/doctor/modifydoctor
 |----|---|----|
 |companyid | Long |公司id|
 name|String|自定义套餐名
-price||BigDecimal|套餐价格
+price|BigDecimal|套餐价格
 number|Integer|可签署数量
 endless|Byte|(是否无限使用（及不设置剩余份数），0:否，1:是):
 hasDeadLine | Byte | (是否设置截止时间1:设置 0:不设置):
