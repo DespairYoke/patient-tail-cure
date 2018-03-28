@@ -181,7 +181,6 @@ deadLine | Date |截止时间
 |字段|类型|说明|
 |------|--|----------------------------------------------------------|
 vipproductsid | Long | vip套餐的id
-
 msg | String | 拒绝或通过理由
 status | Byte | 0表示拒绝 1表示通过
 admin | String | 审核人姓名
