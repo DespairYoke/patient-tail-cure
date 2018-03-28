@@ -177,3 +177,13 @@ number|Integer|可签署数量
 endless|Byte|(是否无限使用（及不设置剩余份数），0:否，1:是):
 hasDeadLine | Byte | (是否设置截止时间1:设置 0:不设置):
 deadLine | Date |截止时间
+
+|字段|类型|说明|
+|------|--|----------------------------------------------------------|
+vipproductsid | Long | vip套餐的id
+
+msg | String | 拒绝或通过理由
+status | Byte | 0表示拒绝 1表示通过
+admin | String | 审核人姓名
+userid |Long|审核人的userid(拒绝可以不传)
+maxnumber|Integer|如果审核通过，且是无限签，必须传递最大签署份数
