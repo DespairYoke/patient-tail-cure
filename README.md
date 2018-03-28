@@ -168,8 +168,8 @@ localhost:8080/doctor/modifydoctor
        "password":
     }
     
-字段|类型|说明
-——|——-|——-
+|字段|类型|说明|
+|——|——-|——----|
 companyid|Long|公司id
 name|String|自定义套餐名
 price||BigDecimal|套餐价格
