@@ -14,11 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.print.Doc;
 import java.util.Date;
 
-/**
- * @author zwd
- * @date 2018/3/22 16:23
- * @Email lovejavazwd@gmail.com
- */
+
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {

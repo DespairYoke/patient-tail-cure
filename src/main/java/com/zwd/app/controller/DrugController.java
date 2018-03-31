@@ -11,11 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * @author zwd
- * @date 2018/3/23 19:32
- * @Email lovejavazwd@gmail.com
- */
+
 @RestController
 @RequestMapping(value = "drug")
 public class DrugController {

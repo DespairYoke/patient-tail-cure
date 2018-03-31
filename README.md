@@ -178,6 +178,19 @@ endless|Byte|(是否无限使用（及不设置剩余份数），0:否，1:是):
 hasDeadLine | Byte | (是否设置截止时间1:设置 0:不设置):
 deadLine | Date |截止时间
 
+|字段 | 说明 |
+|----|----|
+|message|提示信息|
+|status|成功时为200，失败时为500|
+|companyid | 公司id|
+|id | 套餐id |
+| name | 套餐名 |
+| number | 签署份数 |
+| price | 价格 |
+| endless | (是否无限使用（及不设置剩余份数），0:否，1:是): |
+
+4. 系统后台对客户提交的自定义套餐进行审核（查看数据，当不限制签署份额时，要求输入最大签署份额），通过后生成订单等待用户支付，拒绝后执行存储动作（vip_products_check_log）。
+
 |字段|类型|说明|
 |------|--|----------------------------------------------------------|
 vipproductsid | Long | vip套餐的id
@@ -185,4 +198,4 @@ msg | String | 拒绝或通过理由
 status | Byte | 0表示拒绝 1表示通过
 admin | String | 审核人姓名
 userid |Long|审核人的userid(拒绝可以不传)
-maxnumber|Integer|如果审核通过，且是无限签，必须传递最大签署份数
+maxnumber|Integer|如果审核通过，且是无限签，必须传递最大签署份数；拒绝不需要传参
