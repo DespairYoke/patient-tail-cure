@@ -21,7 +21,7 @@ public class LoginController {
     @Autowired
     private UserService userService;
     @RequestMapping(value = "user")
-    public String login(@RequestBody Doctor doctor) {
+    public String login( Doctor doctor) {
         RespInfo respInfo = new RespInfo();
         Doctor doctor1 = doctorService.selectByPhoneAndPassword(doctor);
         if (doctor1!=null) {

@@ -20,7 +20,7 @@ public class AddPatient {
 
     private Byte sex;
 
-    private String drug;
+    private String drugname;
 
     private String factory;
 
@@ -66,12 +66,12 @@ public class AddPatient {
         this.sex = sex;
     }
 
-    public String getDrug() {
-        return drug;
+    public String getDrugname() {
+        return drugname;
     }
 
-    public void setDrug(String drug) {
-        this.drug = drug;
+    public void setDrugname(String drugname) {
+        this.drugname = drugname;
     }
 
     public String getFactory() {

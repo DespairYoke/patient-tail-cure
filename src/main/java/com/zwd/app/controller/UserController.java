@@ -33,6 +33,11 @@ public class UserController {
     @RequestMapping("addPatient")
     public String addPatient(AddPatient addPatient) {
         RespInfo respInfo = new RespInfo();
+        if (addPatient.getName()==null||addPatient.getNum()==null||addPatient.getDrugname()==null)
+        {
+            respInfo.setMsg("失败");
+            return JSON.toJSONString(respInfo);
+        }
         Patient patient = new Patient();
         patient.setName(addPatient.getName());
         patient.setAge(addPatient.getAge());
@@ -52,7 +57,7 @@ public class UserController {
         dpService.insertSelective(doctorPatient);
         Drug drug = new Drug();
         drug.setFactory(addPatient.getFactory());
-        drug.setName(addPatient.getDrug());
+        drug.setName(addPatient.getDrugname());
         drug.setPrice(addPatient.getPrice());
         drug=drugService.insertSeletive(drug);
         DtPtDrug dtPtDrug = new DtPtDrug();
@@ -111,10 +116,10 @@ public class UserController {
 
 
     //修改医生密码
-    @RequestMapping("/queryuserbyid")
-    public String queryuserbyid(@RequestBody Patient patient){
+    @RequestMapping("/queryuserbyphone")
+    public String queryuserbyid(Patient patient){
         RespInfo respInfo = new RespInfo();
-        Patient patient1 = userService.queryById(patient.getId());
+        Patient patient1 = userService.queryById(patient);
         if(patient1==null){
             respInfo.setMsg("查询对象不存在!");
         }else{

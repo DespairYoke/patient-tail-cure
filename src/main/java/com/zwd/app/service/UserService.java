@@ -12,5 +12,5 @@ public interface UserService {
 
     int updateUser(Patient patient);
 
-    Patient queryById(Integer id);
+    Patient queryById(Patient patient);
 }

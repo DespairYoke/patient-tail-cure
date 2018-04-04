@@ -77,14 +77,14 @@ public class DoctorController {
         return JSON.toJSONString(doctors);
     }
     @RequestMapping("selectdoctor")
-    public String selectdoctor(@RequestBody Doctor doctor){
+    public String selectdoctor( Doctor doctor){
         RespInfo info = new RespInfo();
         info.setContent(doctorService.selectDoctor(doctor));
         info.setMsg("查询成功");
         return JSON.toJSONString(info);
     }
     @RequestMapping("modifydoctor")
-    public String modifyDoctor(@RequestBody Doctor doctor){
+    public String modifyDoctor(Doctor doctor){
         RespInfo info = new RespInfo();
         int num = doctorService.updateUser(doctor);
         if(num<0){

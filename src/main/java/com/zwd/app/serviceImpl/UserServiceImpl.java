@@ -54,7 +54,12 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Patient queryById(Integer  id) {
-        return patientMapper.selectByPrimaryKey(id);
+    public Patient queryById(Patient patient) {
+
+        PatientExample example = new PatientExample();
+        example.createCriteria().andPhoneEqualTo(patient.getPhone());
+        return patientMapper.selectByExample(example).get(0);
+        }
+
     }
-}
+

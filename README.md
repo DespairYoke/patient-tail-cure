@@ -50,12 +50,12 @@
    
    require:
         {
-            localhost:8080/user/queryuserbyid
+            localhost:8080/user/queryuserbyphone
         }
         
         send:
         {
-            "id" pation的id
+            "phone" :
         }
 4、查看所有的骨科的普通医生
 
