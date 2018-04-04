@@ -4,11 +4,7 @@ import com.zwd.app.domain.Doctor;
 import com.zwd.app.domain.Drug;
 import com.zwd.app.domain.Patient;
 
-/**
- * @author zwd
- * @date 2018/3/22 16:59
- * @Email lovejavazwd@gmail.com
- */
+
 public class AddPtDcInfo {
 
     private Integer number;

@@ -124,28 +124,20 @@ localhost:8080/patientinfo/patientanddoctor
 
 //就诊
 localhost:8080/user/addPatient
-{
-     "number": 2,
-    
-        "patient": {
-        		"name": "张三",
-        		"age": 22,
-        		"sex":	0,
-        		"phone": "12111111111"
-        }
-      ,
-        "doctor":{
-        	"phone": "15111111111"
-        },
-        "drug":{
-        	"name": "阿莫西林",
-        	"price": 45,
-        	"factory": "富士山"
-        },
-    
-        "pathogeny": "头晕流鼻涕",
-        "result": "普通小感冒"
-}
+
+    {
+              "name": 2,
+               "patientphone": ""
+               "sex":0,
+               "age":11,
+               "drug":  "阿莫西林",
+               "num": 2
+               "factory": "富士山",
+               "doctorphone": """
+               "price": ""
+                 "pathogeny": "头晕流鼻涕",
+                 "result": "普通小感冒"
+      }
 
 //病例
 localhost:8080/patientinfo/selectallpatient

@@ -2,6 +2,7 @@ package com.zwd.app.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.zwd.app.domain.*;
+import com.zwd.app.entity.AddPatient;
 import com.zwd.app.service.*;
 import com.zwd.app.util.AddPtDcInfo;
 import com.zwd.app.util.LoginInfo;
@@ -30,24 +31,33 @@ public class UserController {
     @Autowired
     private DPDService dpdService;
     @RequestMapping("addPatient")
-    public String addPatient(@RequestBody AddPtDcInfo addPtDcInfo) {
+    public String addPatient(AddPatient addPatient) {
         RespInfo respInfo = new RespInfo();
-        Patient patient = addPtDcInfo.getPatient();
-        Doctor doctor = addPtDcInfo.getDoctor();
-        Drug drug = addPtDcInfo.getDrug();
+        Patient patient = new Patient();
+        patient.setName(addPatient.getName());
+        patient.setAge(addPatient.getAge());
+        patient.setPassword("123456");
+        patient.setSex(addPatient.getSex());
+        patient.setPhone(addPatient.getPatientphone());
         patient = userService.insertSeletive(patient);
-        doctor = doctorService.selectDoctor(doctor);
-        drugService.insertSeletive(drug);
+        Doctor doctor = new Doctor();
+        doctor.setPhone(addPatient.getDoctorphone());
         DoctorPatient doctorPatient = new DoctorPatient();
+        doctor=doctorService.selectDoctor(doctor);
         doctorPatient.setDoctorid(doctor.getId());
         doctorPatient.setPatientid(patient.getId());
         doctorPatient.setTime(new Date());
-        doctorPatient.setPathogeny(addPtDcInfo.getPathogeny());
-        doctorPatient.setResult(addPtDcInfo.getResult());
+        doctorPatient.setPathogeny(addPatient.getPathogeny());
+        doctorPatient.setResult(addPatient.getResult());
         dpService.insertSelective(doctorPatient);
+        Drug drug = new Drug();
+        drug.setFactory(addPatient.getFactory());
+        drug.setName(addPatient.getDrug());
+        drug.setPrice(addPatient.getPrice());
+        drug=drugService.insertSeletive(drug);
         DtPtDrug dtPtDrug = new DtPtDrug();
         dtPtDrug.setDoctorpatientid(doctorPatient.getId());
-        dtPtDrug.setNum(addPtDcInfo.getNumber());
+        dtPtDrug.setNum(addPatient.getNum());
         dtPtDrug.setDrugid(drug.getId());
         dpdService.insertSelective(dtPtDrug);
         respInfo.setMsg("添加成功！");
